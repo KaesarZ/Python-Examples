@@ -1,6 +1,8 @@
 '''
         Project: Fatorial
         Description: Calcula o fatorial recursivamente
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def fat(num):
     ''' Retorna o fatorial do número parâmetro recursivamente'''
