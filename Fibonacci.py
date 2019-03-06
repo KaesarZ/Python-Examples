@@ -1,6 +1,8 @@
 '''
         Project: Fibonacci
         Description: Calcula o n-zimo termo da sequencia de fibonacci recursivamente
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def fib(num, dic={}):
     ''' Retorna o valor do n-zimo termo da sequencia de fibonacci recursivamente'''
