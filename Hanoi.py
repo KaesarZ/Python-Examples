@@ -1,6 +1,8 @@
 ﻿'''
         Project: Torre de Hanói
         Description: Solução recursiva da Torre de Hanói com o menor número de movimentos
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def hanoi(num, orig=[], aux=[], dest=[], result=[]):
     ''' Solução recursiva da Torre de Hanói '''
