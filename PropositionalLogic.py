@@ -1,6 +1,8 @@
 '''
         Project: Lógica Proposicional
         Description: Calcula o valor lógico de uma proposição
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def replaceString(string, old_word, new_word):
     ''' Retorna a string com as palavras parâmetros substituídas '''
