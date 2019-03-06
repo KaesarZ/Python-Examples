@@ -1,8 +1,10 @@
 '''
         Project: Wonderful Data Structure
         Description: Implementação de uma estrutura fila e pilha ligada
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 
-              Push↓                     ↓Enqueue
+            Insert↓                     ↓Enqueue
        Denqueue ← * * * * * * * * * * * * → Pop
               Head|   ← Before|Next →   |Tail
 '''        
@@ -50,7 +52,7 @@ class WonderfulDataStructure():
         self.tail = None
     
     #Methods
-    def push(self, obj):
+    def insert(self, obj):
         ''' Insert obj in head '''
         item = WonderfulObject(obj)
         if self.head == None and self.tail == None:
@@ -75,22 +77,22 @@ class WonderfulDataStructure():
     def find(self, obj):
         ''' Find obj in structure'''
         if self.head == None and self.tail == None:
-            return False
+            return None
         else:
             current = self.head
-            while current.getValue() != obj and current != None:
+            while current != None and current.getValue() != obj:
                 current = current.getNext()
-            return current if current.getValue() == obj else False
+            return current
 
     def findLast(self, obj):
         ''' Find obj in structure'''
         if self.head == None and self.tail == None:
-            return False
+            return None
         else:
             current = self.tail
-            while current.getValue() != obj and current != None:
+            while current != None and current.getValue() != obj:
                 current = current.getBefore()
-            return current if current.getValue() == obj else False
+            return current
 
     def remove(self, obj):
         ''' Del first occurrence of obj in structure'''
@@ -98,13 +100,18 @@ class WonderfulDataStructure():
             return False
         else:
             result = self.find(obj)
-            if (result != False):
+            if self.head == self.tail == result:
+                self.head = None
+                self.tail = None
+            elif self.head == result:
+                self.head.getNext().setBefore(None)
+                self.head = self.head.getNext()
+            elif self.tail == result:
+                self.tail.getBefore().setNext(None)
+                self.tail = self.tail.getBefore()
+            elif result != None:
                 result.getBefore().setNext(result.getNext())
                 result.getNext().setBefore(result.getBefore())
-                del result
-                return True
-            else:
-                return False
 
     def removeLast(self, obj):
         ''' Del first occurrence of obj in structure'''
@@ -112,18 +119,28 @@ class WonderfulDataStructure():
             return False
         else:
             result = self.findLast(obj)
-            if (result != False):
+            if self.head == self.tail == result:
+                self.head = None
+                self.tail = None
+            elif self.head == result:
+                self.head.getNext().setBefore(None)
+                self.head = self.head.getNext()
+            elif self.tail == result:
+                self.tail.getBefore().setNext(None)
+                self.tail = self.tail.getBefore()
+            elif result != None:
                 result.getBefore().setNext(result.getNext())
                 result.getNext().setBefore(result.getBefore())
-                del result
-                return True
-            else:
-                return False
      
     def pop(self):
         ''' Remove tail obj '''
         if self.head == None and self.tail == None:
-            return False
+            return None
+        elif self.head == self.tail:
+            unique = self.tail
+            self.head = None
+            self.tail = None
+            return unique
         else:
             last = self.tail
             self.tail.getBefore().setNext(None)
@@ -133,7 +150,12 @@ class WonderfulDataStructure():
     def denqueue(self):
         ''' Remove head obj '''
         if self.head == None and self.tail == None:
-            return False
+            return None
+        elif self.head == self.tail:
+            unique = self.head
+            self.head = None
+            self.tail = None
+            return unique
         else:
             first = self.head
             self.head.getNext().setBefore(None)
@@ -155,7 +177,7 @@ class WonderfulDataStructure():
     def __str__(self):
         ''' Print structure'''
         if self.head == None and self.tail == None:
-            return '(None)'
+            return '(WDS) {}'
         else:
             result = '(WDS) { '
             current = self.head
@@ -163,24 +185,22 @@ class WonderfulDataStructure():
             while current != None:
                 current = current.getNext()
                 result += (', %s ' % current) if current != None else ''
-            result += '}'
+            result += ' }'
             return result
         
 
 def debugger():
     ''' debugger '''
-    wds = WonderfulDataStructure()
+    Breguinaite = WonderfulDataStructure()
     a = 2
-    wds.push(1)
-    wds.push(a)
-    wds.push(3)
-    wds.enqueue('a')
-    wds.enqueue('c')
-    print(wds.removeLast(a))
-    print(wds)
+    Breguinaite.insert(2)
+    Breguinaite.insert(1)
+    Breguinaite.insert(2)
+    Breguinaite.insert(1)
+    Breguinaite.insert(2)
+    print(Breguinaite)
+    print(Breguinaite.pop())
+    print(Breguinaite)
 
-if __name__ == "__main__":
-    debugger()
 
-         
-        
+debugger()
