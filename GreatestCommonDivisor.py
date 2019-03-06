@@ -1,6 +1,8 @@
 '''
         Project: Maior Divisor Comum
         Description: Calcula o maior divisor comum entre dois números inteiros recursivamente
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def mdc(a, b):
     ''' Retorna o maior divisor comum dos números paramentros '''
