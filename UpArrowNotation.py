@@ -1,6 +1,8 @@
 ﻿'''
         Project: Notação de Knuth
         Description: Retorna o resultado decimal dada uma expressão na notação de Knuth's Up-Arrow Notation
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 num = int(input('Digite a base: '))
 qnt = int(input('Digite a quantidade de up-arrows:'))
