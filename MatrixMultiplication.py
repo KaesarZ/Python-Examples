@@ -1,6 +1,8 @@
 '''
         Project: Multiplicação de Matrizes
         Description: Retorna o produto de duas matrizes
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def matrixMultiplication(a=[], b=[]):
     #Obtendo tamanhos
