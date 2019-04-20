@@ -7,7 +7,7 @@
 
 def heapSort(array):
     ''' Order method based in Heap Structure '''
-    h = buildHeap(array)
+    h = Heap(array)
     i = len(array) - 1
     while (i >= 0):
         array[i] = h.extractMax()
