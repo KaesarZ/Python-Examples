@@ -13,39 +13,6 @@ def heapSort(array):
         array[i] = h.extractMax()
         i -= 1
 
-class HeapItem():
-    def __init__(self, priority, value):
-        ''' Class constructor '''
-        self.value = value
-        self.priority = priority
-
-    def __str__(self):
-        return '(%s: %s)' % (self.value, self.priority)
-
-    def __lt__(self, other):
-        ''' Returns comparison x < y '''
-        return self.priority < other.priority
-
-    def __le__(self, other):
-        ''' Returns comparison x <= y '''
-        return self.priority <= other.priority
-
-    def __eq__(self, other):
-        ''' Returns comparison x == y '''
-        return self.priority == other.priority
-
-    def __ne__(self, other):
-        ''' Returns comparison x != y or x <> y'''
-        return self.priority != other.priority
-
-    def __gt__(self, other):
-        ''' Returns comparison x > y '''
-        return self.priority > other.priority
-
-    def __ge__(self, other):
-        ''' Returns comparison x >= y '''
-        return self.priority >= other.priority
-
 class Heap():
     def __init__(self, list = []):
         ''' Class constructor or Build Heap'''
