@@ -1,5 +1,5 @@
 '''
-        Project: Fatorial
+        Project: Heap
         Description: Implementação de uma estrutura heap e ordenação heap
         Name: Júlio César de Carvalho Barros
         Email: jccb2@cin.ufpe.br
