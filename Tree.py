@@ -31,6 +31,10 @@ class Tree():
         ''' Default string returns '''
         return '{ %s }' % self.__preOrder(self.root)
 
+    def __repr__(self):
+        ''' Default string returns '''
+        return '{ %s }' % self.__preOrder(self.root)
+    
     def __preOrder(self, node):
         result = ''
         if node != None:
@@ -125,6 +129,7 @@ class Tree():
         found = self.search(key)
         if found != None:
             self.__remove(self.search(key))
+            self.len -= 1
     
     def __remove(self, node):
         if node.left == None:
