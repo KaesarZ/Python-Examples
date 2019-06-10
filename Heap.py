@@ -1,8 +1,8 @@
 '''
-    Project: Heap
-    Description: Implementação de uma estrutura heap e ordenação heap
-    Name: Júlio César de Carvalho Barros
-    Email: jccb2@cin.ufpe.br
+        Project: Heap
+        Description: Implementação de uma estrutura heap e ordenação heap
+        Name: Júlio César de Carvalho Barros
+        Email: jccb2@cin.ufpe.br
 '''
 def heapSort(array,priority=None):
     ''' Order method based in Heap Structure '''
@@ -12,40 +12,6 @@ def heapSort(array,priority=None):
         array[i] = h.extract()
         i -= 1
 
-class HeapItem():
-    def __init__(self, priority, value):
-        ''' Class constructor '''
-        self.value = value
-        self.priority = priority
-
-    def __str__(self):
-        ''' Returns string value '''
-        return '(%s: %s)' % (self.value, self.priority)
-
-    def __lt__(self, other):
-        ''' Returns comparison x < y '''
-        return self.priority < other.priority
-
-    def __le__(self, other):
-        ''' Returns comparison x <= y '''
-        return self.priority <= other.priority
-
-    def __eq__(self, other):
-        ''' Returns comparison x == y '''
-        return self.priority == other.priority
-
-    def __ne__(self, other):
-        ''' Returns comparison x != y or x <> y'''
-        return self.priority != other.priority
-
-    def __gt__(self, other):
-        ''' Returns comparison x > y '''
-        return self.priority > other.priority
-
-    def __ge__(self, other):
-        ''' Returns comparison x >= y '''
-        return self.priority >= other.priority
-        
 class Heap():
     def __init__(self,array=[],priority=None,heapMin=False):
         ''' Build Heap '''
